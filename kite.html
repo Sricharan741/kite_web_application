@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <svg id="kite" width="500px" height="500px">
+        </svg>
+        <script type="text/javascript">
+            var svgns="http://www.w3.org/2000/svg";
+            class thread{
+                constructor(x1,y1,x2,y2){
+                    this.x1=x1;
+                    this.y1=y1;
+                    this.x2=x2;
+                    this.y2=y2;
+                }
+                create(){
+                    let svg=document.getElementById("kite");
+                }
+            }
+            class kite{
+                constructor(x,y,z,width,height,angle,color,tail_length,tobj){
+                    this.x=x;
+                    this.y=y;
+                    this.z=z;
+                    this.width=width;
+                    this.height=height;
+                    this.angle=angle;
+                    this.color=color;
+                    this.tail_length=tail_length;
+                    this.t=tobj;
+                }
+                create(){
+                    var svg=document.getElementById("kite");
+                    let rect=document.createElementNS(svgns,'rect');
+                    rect.setAttributeNS(null,'x',this.x);
+                    rect.setAttributeNS(null,'y',this.y);
+                    rect.setAttributeNS(null,'width',this.width);
+                    rect.setAttributeNS(null,'height',this.height);
+                    rect.setAttributeNS(null,'transform','rotate('+this.angle+')')
+                    rect.setAttributeNS(null,'fill',this.color);
+                    svg.appendChild(rect);
+                }
+            }
+            class wind{
+                constructor(){
+                    this.direction=direction;
+                    this.speed=speed;
+                }
+            }
+            class ground{
+                constructor(){
+                }
+            }
+            k=new kite(200,0,0,100,100,45,"yellow",20,3);
+            k.create();
+        </script>
+    </body>
+</html>
